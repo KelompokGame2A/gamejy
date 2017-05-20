@@ -20,3 +20,12 @@ public class Clan {
 	public String getClan() {
         return clan;
     }
+    public void setClan(String clan) {
+        this.clan = clan;
+    }
+    public int getJmhMbr() {
+        return jmhMbr;
+    }
+    public void setJmhMbr(int jmhMbr) {
+        this.jmhMbr = jmhMbr;
+    }
