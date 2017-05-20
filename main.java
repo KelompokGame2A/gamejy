@@ -160,3 +160,59 @@ public class main extends Application {
 					int pr2 = 0;
 					int jmh1 = 0;
 					int jmh2 = 0;
+				if(Clan1 != Clan2){
+						ArrayList<String> list = new ArrayList<String>();
+						for(int i = 0; i < clist.size(); i++){
+							if(clist.get(i).getClan() ==  Clan1){
+								th1 = clist.get(i).getTh();
+								lv1 = clist.get(i).getLv();
+								pr1 = clist.get(i).getPr();
+							}else if(clist.get(i).getClan() == Clan2){
+								th2 = clist.get(i).getTh();
+								lv2 = clist.get(i).getLv();
+								pr2 = clist.get(i).getPr();								
+							}
+						}
+						jmh1 = (th1*10)+(lv1*2)+(pr1);
+						jmh2 = (th2*10)+(lv2*2)+(pr2);
+						
+						if(jmh1 > jmh2){
+							JOptionPane.showMessageDialog(null,"Selamat Clan '"+Clan1+"' sebagai pemenang atas pertandingan"
+															 + " antara Clan '"+Clan1+" VS '"+Clan2+"' dengan total score "+jmh1);
+						}else{
+							JOptionPane.showMessageDialog(null,"Selamat Clan '"+Clan2+"' sebagai pemenang atas pertandingan"
+															 + " antara 'Clan "+Clan1+" VS 'Clan "+Clan2+"' dengan total score "+jmh2);
+						}
+						JOptionPane.showMessageDialog(null,"STATISTIK PERTANDINGAN:\n"
+														 + "Clan "+Clan1+" -> TH: "+th1+" LV: "+lv1+" PR: "+pr1+" Total: "+jmh1+"\n"
+														 + "Clan "+Clan2+" -> TH: "+th2+" LV: "+lv2+" PR: "+pr2+" Total: "+jmh2+"\n");
+						mulai.setText("PRE-FIGHT");
+						combox.getSelectionModel().select(-1);
+						combox2.getSelectionModel().select(-1);
+						combox.setDisable(true);
+						combox2.setDisable(true);
+						
+					}else JOptionPane.showMessageDialog(null,"Pilih Clan Yang Berbeda Saat Bertanding");
+				}
+				
+			}
+		});
+					
+		
+		btnData.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent e) {
+				
+				int cth = 0;
+				int clv = 0;
+				int cpr = 0;
+				
+				try{			
+				String clan = InputText("Masukkan Nama Clan (3 Character) :");
+				
+				int jmhMbr = JmhMember();
+			
+				for(int i=1; i<=jmhMbr; i++){
+				Member mb = new Member();
+				
