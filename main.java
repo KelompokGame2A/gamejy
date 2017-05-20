@@ -114,3 +114,49 @@ public class main extends Application {
 		grid.add(combox, 0, 2);
 		grid.setHalignment(combox2, HPos.RIGHT);
 		grid.add(combox2, 2, 2);
+		
+		Text text = new Text("PERTANDINGAN");
+		text.setFont(Font.font("THOMA", FontWeight.NORMAL, 20));
+		grid.setHalignment(text, HPos.CENTER);
+		grid.add(text, 1, 2);
+		
+		
+		
+		plhTable.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				if(plhTable.getValue() == "Table Member"){
+				table.setVisible(true);
+				table2.setVisible(false);
+				}else{
+				table.setVisible(false);
+				table2.setVisible(true);
+				}
+			}
+		});
+
+		mulai.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) { 
+				
+				if(namaClan().size()<3){
+					JOptionPane.showMessageDialog(null,"Masukkan Data Clan Minimal 3!!");
+				}else if(combox.getValue() == null || combox2.getValue() == null){
+					combox.setDisable(false);
+					combox2.setDisable(false);
+					combox.getItems().addAll(namaClan());
+					combox2.getItems().addAll(namaClan());
+					JOptionPane.showMessageDialog(null,"Data Clan + Member Sudah Siap");
+					JOptionPane.showMessageDialog(null,"Silahkan Pilih Clan Untuk Bertanding!");
+					mulai.setText("START FIGHT");
+				}else{
+					String Clan1 = (String) combox.getValue();
+					String Clan2 = (String) combox2.getValue();
+					int th1 = 0;
+					int th2 = 0;
+					int lv1 = 0;
+					int lv2 = 0;
+					int pr1 = 0;
+					int pr2 = 0;
+					int jmh1 = 0;
+					int jmh2 = 0;
