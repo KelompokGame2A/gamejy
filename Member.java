@@ -23,3 +23,15 @@ public class Member {
     public String getNamaMbr() {
         return namaMbr;
     }
+     public void setNamaMbr(String namaMbr) {
+        this.namaMbr = namaMbr;
+    }
+    public int getTh() {
+        return th;
+    }
+    public void setTh(int th) {
+        this.th = th;
+    }
+    public int getLv() {
+        return lv;
+    }
