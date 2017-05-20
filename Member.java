@@ -35,3 +35,14 @@ public class Member {
     public int getLv() {
         return lv;
     }
+    public void setLv(int lv) {
+        this.lv = lv;
+    }
+    public int getPr() {
+        return pr;
+    }
+    public void setPr(int pr) {
+        this.pr = pr  ;
+    }
+    
+}
