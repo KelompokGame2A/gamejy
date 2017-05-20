@@ -29,3 +29,27 @@ public class Clan {
     public void setJmhMbr(int jmhMbr) {
         this.jmhMbr = jmhMbr;
     }
+	public void setJmhMbr(int jmhMbr) {
+        this.jmhMbr = jmhMbr;
+    }
+    public int getTh() {
+        return th;
+    }
+    public void setTh(int th) {
+        this.th = th;
+    }
+    public int getLv() {
+        return lv;
+    }
+    public void setLv(int lv) {
+        this.lv = lv;
+    }
+    public int getPr() {
+        return pr;
+    }
+    public void setPr(int pr) {
+        this.pr = pr  ;
+    }
+	
+}
+	
