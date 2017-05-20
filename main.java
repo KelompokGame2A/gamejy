@@ -215,4 +215,25 @@ public class main extends Application {
 			
 				for(int i=1; i<=jmhMbr; i++){
 				Member mb = new Member();
+					mb.setClan(clan);
+				String member = InputText("Masukkan Nama Member "+i+" :");
+				mb.setNamaMbr(member);
+				Random rth = new Random();
+				Random rlv = new Random();
+				Random rpr = new Random();
+
+				int th = rth.nextInt(10-1)+1;
+				int lv = rlv.nextInt(50-1)+1;
+				int pr = rpr.nextInt(100-1+1);
+				
+				cth += th;
+				clv += lv;
+				cpr += pr;
+				
+				mb.setTh(th);
+				mb.setLv(lv);
+				mb.setPr(pr);
+				
+				mlist.add(mb);
+		        }
 				
