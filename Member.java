@@ -14,3 +14,12 @@ public class Member {
         this.lv = 0;
         this.pr = 0;
     }
+    public String getClan() {
+        return clan;
+    }
+    public void setClan(String clan) {
+        this.clan = clan;
+    }
+    public String getNamaMbr() {
+        return namaMbr;
+    }
