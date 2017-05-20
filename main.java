@@ -236,4 +236,44 @@ public class main extends Application {
 				
 				mlist.add(mb);
 		        }
+		Clan cn = new Clan();
+				
+				cn.setClan(clan);
+				cn.setJmhMbr(jmhMbr);
+				cn.setTh(cth);
+				cn.setLv(clv);
+				cn.setPr(cpr);
+				clist.add(cn);
+				
+				
+				ObservableList<Clan> dataClan = FXCollections.observableArrayList(clist);
+				table2.setItems(dataClan);
+				
+				ObservableList<Member> data = FXCollections.observableArrayList(mlist);
+				table.setItems(data);
+
+				}catch(Exception ex){
+					JOptionPane.showMessageDialog(null,"Data Belum diInputkan!!");
+				}    
+			}
+
+			private String InputText(String label) {
+				String input = null;
+				boolean stop = true;
+				while(stop){
+					input = JOptionPane.showInputDialog(label);
+					if(input.length() < 3 || input==null) {
+						JOptionPane.showMessageDialog(null,"Maaf Data Minimal 3 Character!");
+						stop = true;
+						
+					}else stop = false;
+				}
+				return input;
+			}
+			
+			private int JmhMember() {
+			 String input = null;
+				int hasil = 0;
+				//= Integer.parseInt(jmhMbr);
+				boolean stop = true;
 				
