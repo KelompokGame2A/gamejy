@@ -29,9 +29,6 @@ public class Clan {
     public void setJmhMbr(int jmhMbr) {
         this.jmhMbr = jmhMbr;
     }
-	public void setJmhMbr(int jmhMbr) {
-        this.jmhMbr = jmhMbr;
-    }
     public int getTh() {
         return th;
     }
