@@ -60,3 +60,57 @@ public class main extends Application {
 		TableColumn<Member, String> prClm = new TableColumn<>("Pr");
 		prClm.setMinWidth(50);
 		prClm.setCellValueFactory(new PropertyValueFactory<>("pr"));
+		table = new TableView<>();
+		
+		table.getColumns().addAll(clanClm,memberClm,thClm,lvClm,prClm);
+		grid.add(table, 0, 8, 3,1);
+		
+		
+		TableColumn<Clan, String> cnClan = new TableColumn<>("Clan");
+		cnClan.setMinWidth(120);
+		cnClan.setCellValueFactory(new PropertyValueFactory<>("clan"));
+		
+		TableColumn<Clan, String> cnJmhMbr = new TableColumn<>("Jumlah");
+		cnJmhMbr.setMinWidth(120);
+		cnJmhMbr.setCellValueFactory(new PropertyValueFactory<>("jmhMbr"));
+		
+		TableColumn<Clan, String> cnTh = new TableColumn<>("TH");
+		cnTh.setMinWidth(50);
+		cnTh.setCellValueFactory(new PropertyValueFactory<>("th"));
+		
+		TableColumn<Clan, String> cnLv = new TableColumn<>("LV");
+		cnLv.setMinWidth(50);
+		cnLv.setCellValueFactory(new PropertyValueFactory<>("lv"));
+		
+		TableColumn<Clan, String> cnPr = new TableColumn<>("Pr");
+		cnPr.setMinWidth(50);
+		cnPr.setCellValueFactory(new PropertyValueFactory<>("pr"));
+		
+		TableView<Clan> table2 = new TableView<Clan>();
+		table2.getColumns().addAll(cnClan,cnJmhMbr,cnTh,cnLv,cnPr);
+		grid.add(table2, 0, 8, 3,1);
+		table2.setVisible(false);
+		
+		ComboBox<Object> plhTable = new ComboBox<>();
+		
+		plhTable.setPromptText("Pilih Table");
+		grid.setHalignment(plhTable, HPos.RIGHT);
+		plhTable.getItems().addAll("Table Member","Table Clan");
+		grid.add(plhTable, 2, 7);
+		
+		Button btnData = new Button("Tambah CLAN + MEMBER");
+		Button mulai = new Button("PRE-FIGHT");
+		grid.setHalignment(mulai, HPos.CENTER);
+		grid.add(btnData, 0, 7);
+		grid.add(mulai, 1, 3);
+		
+		ComboBox<Object> combox = new ComboBox<>();
+		ComboBox<Object> combox2 = new ComboBox<>();
+		
+		combox.setDisable(true);
+		combox2.setDisable(true);
+		combox.setPromptText("CLAN I");
+		combox2.setPromptText("CLAN II");
+		grid.add(combox, 0, 2);
+		grid.setHalignment(combox2, HPos.RIGHT);
+		grid.add(combox2, 2, 2);
