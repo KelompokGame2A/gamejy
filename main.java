@@ -276,4 +276,49 @@ public class main extends Application {
 				int hasil = 0;
 				//= Integer.parseInt(jmhMbr);
 				boolean stop = true;
-				
+				while(stop){
+					input = JOptionPane.showInputDialog("Masukkan Jumlah Member Clan (Num):");				
+					if(!isNumeric(input)) {
+						JOptionPane.showMessageDialog(null,"Maaf Data Harus Number!");
+						stop = true;
+					}else{
+						hasil = Integer.parseInt(input);
+						if(hasil >= 10){
+							stop = false;
+						}else{
+							JOptionPane.showMessageDialog(null,"Maaf Jumlah Member Minimal 10!");
+							stop = true;
+						}							
+					}
+				}
+				return hasil;
+			}
+		});
+		
+		Scene scene = new Scene(grid,530,400);
+		
+		primaryStage.setScene(scene);
+		primaryStage.show();
+		
+	}
+	
+	public static ObservableList<String> namaClan()
+	{
+		ArrayList<String> list = new ArrayList<String>();
+		for(int i = 0; i < clist.size(); i++){
+			list.add(clist.get(i).getClan());
+		}
+		ObservableList<String> obList = FXCollections.observableArrayList(list);
+		return obList;
+	}
+	
+	
+	public static boolean isNumeric(String str)
+	{
+	  return str.matches("-?\\d+(\\.\\d+)?");  //match a number with optional '-' and decimal.
+	}
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+}
